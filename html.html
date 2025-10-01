@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advice Test</title>
+</head>
+<body>
+  <div class="advice">
+    <h1>Daily Advice</h1>
+    <span id="adviceText">Loading...</span><br>
+    <button id="newAdviceBtn">New Advice</button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const adviceSpan = document.getElementById("adviceText");
+      const adviceBtn = document.getElementById("newAdviceBtn");
+
+      async function getAdvice() {
+        try {
+          const res = await fetch("https://api.adviceslip.com/advice");
+          const data = await res.json();
+          adviceSpan.textContent = `"${data.slip.advice}"`;
+        } catch (error) {
+          console.error("Advice API error:", error);
+          adviceSpan.textContent = "Oops! Could not load advice.";
+        }
+      }
+
+      if (adviceSpan) getAdvice();
+      if (adviceBtn) adviceBtn.addEventListener("click", getAdvice);
+    });
+  </script>
+</body>
+</html>

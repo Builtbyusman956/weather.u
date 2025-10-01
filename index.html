@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Hub</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <section>
+    <nav>
+      <h1>Daily Hub</h1>
+    </nav> 
+    <main>
+      <div class="tasks">
+        <h1>
+          My Tasks 
+          <i id="add-icon" class="fa-solid fa-plus" style="color:#fff;cursor:pointer"></i>
+        </h1>
+        <div id="task-list">
+          <label><input type="checkbox" value="Pray"> Pray <i class="fa-solid fa-trash delete"></i></label>
+          <label><input type="checkbox" value="Work"> Work <i class="fa-solid fa-trash delete"></i></label>
+        </div>
+        <button id="add-btn">ADD TASK</button>
+      </div>
+ <div class="clock">
+        <h1 id="time">--:--:--</h1>
+        <span id="date">Loading...</span>
+      </div>
+
+  <div class="weather">
+        <h1>Weather</h1>
+        <input type="text" id="cityInput" placeholder="Enter city">
+        <button id="getWeatherBtn">Get weather</button>
+        <div id="weatherResult"></div>
+      </div>
+<div class="advice">
+  <h1>Daily Advice</h1>
+  <p id="adviceText">Loading...</p>
+  <button id="adviceBtn">New Advice</button>
+</div>
+</main>
+<footer>Built by Usman</footer>
+  </section>
+  <script src="index.js"></script>
+</body>
+</html>
+
